@@ -3,6 +3,7 @@ import { Component,inject,OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { APIResponseModel, Irole } from '../../model/interface/role';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../environments/environment.development';
 
 @Component({ // this is a component decorator for the class RolesComponent 
   selector: 'app-roles',
@@ -22,38 +23,23 @@ export class RolesComponent implements OnInit {
   http=inject(HttpClient);
   roleList :Irole[]=[ // actually we should write =res.data to get the data from the api but the api is not working , see inside the GetRoles function 
                       // that is the genral method 
-    {
-      "roleId": 2,
-      "role": "Admin"
-    },
-    {
-      "roleId": 4,
-      "role": "Junior Developer"
-    },
-    {
-      "roleId": 6,
-      "role": "Team Lead"
-    },
-    {
-      "roleId": 13,
-      "role": "Manager"
-    },
-    {
-      "roleId": 26,
-      "role": "Client"
-    }
+    
   ];
 
   ngOnInit(): void { // this is activated whenever the page is loaded  , this is an life cycle even and would only work like that if i implement the OnInit
-    //this.getAllRoles()
+    this.getAllRoles()
   }
 
 
-  getAllRoles(){ // this is making the api call
-    this.http.get<APIResponseModel>("https://freeapi.miniprojectideas.com/api/EmployeeApp/GetAllRoles").subscribe((res:APIResponseModel)=>{
-         this.roleList=res.data;
-     })
-  }
+  getAllRoles() {
+    this.http.get<Irole[]>(environment.API_URL+"roles").subscribe(
+        (res) => {
+            this.roleList = res;},
+        (error) => {
+            console.error("API Error:", error);
+        }
+    );
+}
 
 
 
@@ -78,7 +64,19 @@ export class RolesComponent implements OnInit {
 
 
 
+// this is the normal way of doing the api call but we have done it in that way since i have an server on the system 
+// and the json response is an array here and not the whole api respones model 
 
+// ngOnInit(): void { // this is activated whenever the page is loaded  , this is an life cycle even and would only work like that if i implement the OnInit
+//   //this.getAllRoles()
+// }
+
+
+// getAllRoles(){ // this is making the api call
+//   this.http.get<APIResponseModel>("https://freeapi.miniprojectideas.com/api/EmployeeApp/GetAllRoles").subscribe((res:APIResponseModel)=>{
+//        this.roleList=res.data;
+//    })
+// }
 
 
 

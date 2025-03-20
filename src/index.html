@@ -14,6 +14,59 @@
   inside of that root component and in its html file specifically we add the other components with the same class-->
 </body>
 </html>
+
+<!--CHANGE 1-->
+<!--So there is a major change in the way the project is implemented , Since i was not able to access the api
+i have created my own json server on the system to do that the we need the following commands 
+npm install -g json server
+
+this will import the json server on the system and then we need to create an file in the main folder not in any sub folders
+this folder will be named as db.json and then we need to add whatever the data we want to add in the database 
+
+then use the following command to run the server might have to use npx before the command 
+json-server --wacth db.json --port 3000 this will start the server and give u the api 
+
+Method	URL	                                Description
+GET	    http://localhost:3000/clients	      Fetch all clients
+GET	    http://localhost:3000/clients/{id}	Fetch a specific client by clientId
+POST	  http://localhost:3000/clients	      Add a new client
+PUT	    http://localhost:3000/clients/{id}	Update an existing client
+DELETE	http://localhost:3000/clients/{id}	Delete a client
+
+and also for the roles and designation 
+
+
+now how to add these in the code , 
+
+MAJOR MODIFICAtion - roles
+
+in the roles we remove the hard coded data from the rolelist and then we use the api 
+
+to do that we have to make some changes , now since u will see in postman that the api is returning and array of roles 
+we using apiresponsemodel is not correct because that expects a message , a bool and data but now there is only the array of data 
+
+so instead of using apiresponse we use the irole[] in the observable and in the get method 
+
+also we change the get method and now the res is not of any particular type and since we are already getting an array from the response 
+we assign this.rolelist= res and not res.data 
+
+
+
+MAJOR MODIFICAtion - designation 
+
+in this too we are getting the array of designation  instead of the apiresponse so we have to make the same changes 
+in the designation and the master services as well
+
+
+also in the environment now we can add the local api and then route thru that 
+
+
+
+-->
+
+
+
+
 <!-- there are directives in angular they are basically specially properties/ part in an normal html tag
 there are two type of directives - structural and attribute 
 structural directives involve - ngIf,ngFor
@@ -104,4 +157,22 @@ there are two constant files in the environments folder , one is the basic .ts f
 sometimes we have different api for development and normal so we can keep them separated for now add the api common part in the 
 API_URl variable(make it if not there)
 and whereever the api is called using the get/post/put/etc commands u need to write environment.API_URL+"the api part u have different"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -->
