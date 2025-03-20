@@ -1,0 +1,96 @@
+<!--this is your main index.html file for that single page-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angular18Tut</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root> <!--this is an connection made to your main app.component file  by importing or connecting to the root app , inside the root 
+  or the app folder , basically the app folder contains the root application/component it will have its own html,component,css file
+  inside of that root component and in its html file specifically we add the other components with the same class-->
+</body>
+</html>
+<!-- there are directives in angular they are basically specially properties/ part in an normal html tag
+there are two type of directives - structural and attribute 
+structural directives involve - ngIf,ngFor
+attribute directive involve - ngclass and ngStyle
+u need to add CommonMoule in the imports before using them 
+the structural attribute is used with a * in front of it 
+the style and class are used simply by using the [] in the tag 
+
+
+for api 
+u need to go to app.config and in that register the providehttpcilent in the provider 
+we made the api call using the providehttpclient , first u need to add this in this in the config file under the providers 
+then u have to use the inject(httpclient) line to create an instance of the class httpclient then u need to make an function for the 
+specfic api call since here it is getting the roles we make the a new method dor the api call here 
+in this method we use the http.get to get the api and then we use the subscribe method to get whatever is returend back 
+
+
+the api call made is aysncrohous , meaning different parts of the code are run and the code doesn't wait for the response
+when the response function come the subscribe handles it and then using the arrow function the rolelist is updated
+
+the functin is called in oninit function the oninit function is an interface and is implemented here 
+it performs whatever is there in it when the button is pressed or whenever the role html document is accessed 
+
+normally the api call is not done in the component 
+usually the api are not used like this they are used using the services 
+
+services 
+
+it is a class that contains all the functions that are going to be used thruout the project and also for reuseable fuctions 
+
+to make an service we use the ng g s _servicename_ command in the services folder which is present in the app folder and then 
+we go into the ts file , here we have an injectable instead of an component , so this injectable is just like the decorator for the service
+then we create an instance of the http client either by the constructor or by the function inject 
+then we make an function in this master service by the name of get designation , this function basicaly calls the api and returns the data
+here instead of making it any data type  we are going to make this as an interface which has the name apirespone , this interface can be used by
+any component that uses the api 
+
+so the reason to make this thing called as service instead of the normal way of calling the api into the component is because of reuseabilty 
+and ease of doing , when we make an service any component that has to use the api they can simple just import/inject that service into their component 
+this reduces all the work of changing the api everywhere if there is any change somewhere 
+
+
+now coming back to the function in the service this function is used to call the api and this function returns an observable 
+
+what is an observable , it is a data stream that give data at differnt times , imagine this like a youtube channel that uploads
+videos time to time , now to see /be updated about the videos we need to subscribe to that channel in an similar way 
+
+to get data from that data stream /api we need to subscribe to it which u can see is done in the designation component under the ngoninit
+
+
+
+let us also talk about the decorators here for a second , see the appcomponent for that 
+
+
+interfaces - see the interface/role.ts file 
+
+routes are mentioned in the approutes.ts file go there to see more
+for the routes to work we need to add the routeroutlet tag 
+
+we have routerlink that can be used instead of href and is prefred to use intead of the href
+it is present in tags and to see u can go to app.html file , in that we need to add the /link
+to use this import the routerlink module in the import 
+
+routerlink active instead of using the bootstrap -acitve we can use the routerlinkactive to highlight the 
+link that is active to do that we set routerlinkactive="active" and to use this also what we do is import the module
+
+
+
+Class vs interface 
+
+interface are only present in the typescript during the compile time there is nothing like interface because js doesn't have the interface 
+interface must be used only when we  need to define the structure for the type 
+
+classes are used when we use form/ this is done beacuse an instance of them can be created and also they can have default values 
+for the properties in them 
+
+classes can also be used to make methods in them 
+
+you can see the use of the class in the client component and corresponding class in the class folder 
+-->

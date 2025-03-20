@@ -1,0 +1,25 @@
+
+    <!-- this is an control flow statement and can be used instead of structural directive , it doesn't require importing the commonModule-->
+
+    @if (isloader) {
+      <div class="container text-center mt-5">
+        <button class="btn btn-primary">
+          <span class="spinner-border spinner-border-sm"></span>
+          Loading..
+        </button>
+      </div>
+    }@else {
+      <div class="row d-flex pt-2">
+      @for (item of designationList; track $index) { 
+        <div class="col g-1">
+            <div class="card">
+                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxIL940vG3Plr7dRsFjdNd-wyqVDjmTU8Nbg&s" alt="Card image" style="width:100%">
+                <div class="card-body">
+                  <h4 class="card-title">{{item.designation}}</h4>
+                  <a href="#" class="card-link btn btn-primary">edit</a>
+                  <a href="#" class="card-link btn btn-primary">delete</a>
+                </div>
+              </div>
+        </div>}
+    </div>
+    }

@@ -1,0 +1,120 @@
+<div class="row pt-2">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+               <tr> 
+                <th>
+                    Sr No
+                </th>
+                <th>Role Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of roleList; let sr=index">
+                <td>{{sr+1}}</td>
+                <td>{{item.role}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<h1>Roles</h1>
+<div class="row">
+    <div class="col-4">
+        <ul>
+            <li *ngFor="let item of roleList">{{item.role}}</li>
+        </ul>
+    </div>
+    <div class="col-4">
+        <select>
+            <option *ngFor="let item of roleList" [value]="item.roleId">{{item.role}}</option>
+        </select>
+    </div>
+
+</div>
+angular is a platform/framework here package.json contains all the packages that are needed to run the application
+ The command to start an angular application is npx ng new _pojectNAme_
+  to create an component we use npx ng g c _name_  the app component is built by default 
+<div class="row">
+    <div class="col-3">
+        <p>{{currentDate}}</p>
+    </div>
+    <div class="col-3">
+        <p class="bg-primary text-white">{{firtname}}</p> Similar to django this is used to display any variable
+    </div>
+    <div class="col-3"><p>{{selectedValue}}</p></div>
+</div>
+<div class="row">
+    <div class="col-3">
+         <input type="text" [value]="firtname" class="form-control">  this is the property binding where the value is binded to the firstname
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="firtname">  here the ngmodel binds the data two ways and can only be used inside the input and not in display
+    </div>
+    <div class="col-3">
+        <input [type]="inputType">
+    </div>
+    <div class="col-3">
+        <select [(ngModel)]="selectedValue">  this is also an case of two way data binding
+            <option value="MH">MH</option>
+            <option value="MP">Mp</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-danger" (click)="showWelcomeAlert()">show message</button> this is the event binding and it is used to have any event like click 
+    </div> 
+    <div class="col-3">
+        <button class="btn btn-danger" (click)="showMessage('welcome dot net')">show dotnet message</button>
+    </div>  
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage('React is good')">React</button> the event handler is kept in the () and the argument is required for the function
+    </div>
+
+</div>-->

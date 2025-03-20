@@ -1,0 +1,33 @@
+<!--<app-roles></app-roles>--> <!--so the way the connection is theres is somewhat like this 
+the index.html is the main html file and in that the root app is imported  which is the app componet and its
+corresponding file , this is the html of that component and other component are included into this by the command
+<app-_componentName_>
+<app-master></app-master>-->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/master" routerLinkActive="active">Master</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/employee" routerLinkActive="active" >Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/client" routerLinkActive="active">Client</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<div class="container pt-2"><router-outlet></router-outlet></div>
+  
+ 
