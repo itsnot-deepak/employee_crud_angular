@@ -35,7 +35,7 @@
                 <div class="row">
                    
                     <div class="col-6">
-                        <label for="">Person Name</label>
+                        <label for="">Person Name</label> <!--for u to use the ngmodel in the input u need to import the formmodule in the imports of the client component -->
                         <input type="text" [(ngModel)]="clientObject.contactPersonName" class="form-control">
                     </div>
                     <div class="col-6">
@@ -76,7 +76,7 @@
                     </div>
                     <div class="row pt-2" >
                         <div class="col-6 text-center">
-                            <button class="btn btn-success" (click)="Onsave()">Save Client</button>
+                            <button class="btn btn-success" (click)="nSaveClient()">Save Client</button>
                         </div>
                         <div class="col-6 text-center">
                             <button class="btn btn-secondary">Reset</button>

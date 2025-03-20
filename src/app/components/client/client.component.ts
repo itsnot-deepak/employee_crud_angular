@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ClientComponent {
   clientObject:Client=new Client(); // this is the instance of the class , this is why class is used instead of the interface 
-  clientList:Client[]=[];
+  clientList:Client[]=[]; // this will get the data that is returned from the api 
 
 
 }

@@ -93,4 +93,15 @@ for the properties in them
 classes can also be used to make methods in them 
 
 you can see the use of the class in the client component and corresponding class in the class folder 
+
+
+--api division for ease--
+because mostly the url for the api are same we can make an environment folder 
+we use the command ng g environments 
+this command updates the angular.json file and adds this in the file 
+we put the common part of the api in the environment 
+there are two constant files in the environments folder , one is the basic .ts file the other one is the developer.ts file 
+sometimes we have different api for development and normal so we can keep them separated for now add the api common part in the 
+API_URl variable(make it if not there)
+and whereever the api is called using the get/post/put/etc commands u need to write environment.API_URL+"the api part u have different"
 -->
