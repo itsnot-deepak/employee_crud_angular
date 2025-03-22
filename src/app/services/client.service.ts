@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Client } from '../model/class/client';
-import { APIResponseModel } from '../model/interface/role';
+import { APIResponseModel, employee, Project } from '../model/interface/role';
 import { environment } from '../../environments/environment.development';
 
 @Injectable({
@@ -26,4 +26,11 @@ export class ClientService {
   update(obj:Client):Observable<Client[]>{
     return this.http.put<Client[]>(environment.API_URL+"clients/"+obj.id,obj) // this is put/edit request so therefore we need to give the proper url and then also give the obj we are upating
   } 
+  getAllEmployee():Observable<employee[]>{
+    return this.http.get<employee[]>(environment.API_URL+"employees")
+  }
+
+  addClientProject(obj:Project):Observable<Project[]>{
+    return this.http.post<Project[]>(environment.API_URL+"projects",obj)
+  }   
 }

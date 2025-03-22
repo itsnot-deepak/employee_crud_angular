@@ -1,46 +1,46 @@
 {
   "clients": [
     {
-      "id": "4140",
-      "clientId": 102,
-      "contactPersonName": "will Smith",
-      "companyName": "Creative Designs Ltd.",
-      "address": "456 Design Avenue, Block C",
-      "city": "New York",
-      "pincode": "10001",
-      "state": "New York",
-      "employeeStrength": 50,
+      "id": "5001",
+      "clientId": 5001,
+      "contactPersonName": "Jeff Bezos",
+      "companyName": "Amazon",
+      "address": "410 Terry Ave N",
+      "city": "Seattle",
+      "pincode": "98109",
+      "state": "Washington",
+      "employeeStrength": 100000,
+      "gstNo": "GSTIN1234567890",
+      "contactNo": 2065551234,
+      "regNo": "REG-5001-USA"
+    },
+    {
+      "id": "5002",
+      "clientId": 5002,
+      "contactPersonName": "Sundar Pichai",
+      "companyName": "Google",
+      "address": "1600 Amphitheatre Parkway",
+      "city": "Mountain View",
+      "pincode": "94043",
+      "state": "California",
+      "employeeStrength": 120000,
       "gstNo": "GSTIN9876543210",
-      "contactNo": 2125555678,
-      "regNo": "REG-102-NY"
+      "contactNo": 6505555678,
+      "regNo": "REG-5002-USA"
     },
     {
-      "id": "c0c4",
-      "clientId": 0,
-      "contactPersonName": "shawn Mendes",
-      "companyName": "delloite",
-      "address": "fsdasf",
-      "city": "delhi ",
-      "pincode": "1101",
-      "state": "delhi",
-      "employeeStrength": "10",
-      "gstNo": "efaw",
-      "contactNo": "2121",
-      "regNo": "fewa"
-    },
-    {
-      "id": "12ef",
-      "clientId": null,
-      "contactPersonName": "Nalini",
-      "companyName": "CMRIT",
-      "address": "safedfa",
-      "city": "Bengaluru",
-      "pincode": "560037",
-      "state": "Karnatak",
-      "employeeStrength": "01",
-      "gstNo": "dsaf",
-      "contactNo": "151856464",
-      "regNo": "asdfg"
+      "id": "5003",
+      "clientId": 5003,
+      "contactPersonName": "Satya Nadella",
+      "companyName": "Microsoft",
+      "address": "1 Microsoft Way",
+      "city": "Redmond",
+      "pincode": "98052",
+      "state": "Washington",
+      "employeeStrength": 144000,
+      "gstNo": "GSTIN8765432109",
+      "contactNo": 4255557890,
+      "regNo": "REG-5003-USA"
     }
   ],
   "roles": [
@@ -88,13 +88,133 @@
     },
     {
       "designationId": 30,
-      "designation": "Janitor",
+      "designation": "Software Engineer",
       "id": "adad"
     },
     {
       "designationId": 32,
       "designation": "Senior Developer",
       "id": "87b3"
+    }
+  ],
+  "employees": [
+    {
+      "empName": "John Doe",
+      "empId": 101,
+      "empCode": "CT-1001",
+      "empEmailId": "john.doe@example.com",
+      "empDesignation": "Software Engineer",
+      "role": "Junior Developer"
+    },
+    {
+      "empName": "Alice Smith",
+      "empId": 102,
+      "empCode": "CT-1002",
+      "empEmailId": "alice.smith@example.com",
+      "empDesignation": "Data Scientist",
+      "role": "Senior Developer"
+    },
+    {
+      "empName": "Robert Brown",
+      "empId": 103,
+      "empCode": "CT-1003",
+      "empEmailId": "robert.brown@example.com",
+      "empDesignation": "DevOps Engineer",
+      "role": "Team Lead"
+    },
+    {
+      "empName": "Emily Johnson",
+      "empId": 104,
+      "empCode": "CT-1004",
+      "empEmailId": "emily.johnson@example.com",
+      "empDesignation": "Frontend Developer",
+      "role": "Manager"
+    },
+    {
+      "empName": "David Wilson",
+      "empId": 105,
+      "empCode": "CT-1005",
+      "empEmailId": "david.wilson@example.com",
+      "empDesignation": "Backend Developer",
+      "role": "Admin"
+    }
+  ],
+  "projects": [
+    {
+      "empName": "John Doe",
+      "empId": 101,
+      "empCode": "CT-1001",
+      "empEmailId": "john.doe@example.com",
+      "empDesignation": "Software Engineer",
+      "projectName": "E-Commerce Platform",
+      "startDate": "2025-04-15T00:00:00",
+      "expectedEndDate": "2025-09-30T00:00:00",
+      "clientName": "Amazon",
+      "clientProjectId": 5001
+    },
+    {
+      "empName": "Alice Smith",
+      "empId": 102,
+      "empCode": "CT-1002",
+      "empEmailId": "alice.smith@example.com",
+      "empDesignation": "Data Scientist",
+      "projectName": "AI Chatbot Development",
+      "startDate": "2025-05-01T00:00:00",
+      "expectedEndDate": "2025-11-20T00:00:00",
+      "clientName": "Google",
+      "clientProjectId": 5002
+    },
+    {
+      "empName": "Robert Brown",
+      "empId": 103,
+      "empCode": "CT-1003",
+      "empEmailId": "robert.brown@example.com",
+      "empDesignation": "DevOps Engineer",
+      "projectName": "Cloud Infrastructure Setup",
+      "startDate": "2025-06-10T00:00:00",
+      "expectedEndDate": "2025-12-15T00:00:00",
+      "clientName": "Microsoft",
+      "clientProjectId": 5003
+    },
+    {
+      "empName": "Emily Johnson",
+      "empId": 104,
+      "empCode": "CT-1004",
+      "empEmailId": "emily.johnson@example.com",
+      "empDesignation": "Frontend Developer",
+      "projectName": "Healthcare Management System",
+      "startDate": "2025-07-05T00:00:00",
+      "expectedEndDate": "2026-01-10T00:00:00",
+      "clientName": "Amazon",
+      "clientProjectId": 5001
+    },
+    {
+      "empName": "David Wilson",
+      "empId": 105,
+      "empCode": "CT-1005",
+      "empEmailId": "david.wilson@example.com",
+      "empDesignation": "Backend Developer",
+      "projectName": "Banking Security Enhancement",
+      "startDate": "2025-08-01T00:00:00",
+      "expectedEndDate": "2026-02-28T00:00:00",
+      "clientName": "Google",
+      "clientProjectId": 5002
+    },
+    {
+      "id": "3bb5",
+      "clientProjectId": 0,
+      "projectName": "Deepmind",
+      "startDate": "2025-03-23",
+      "expectedEndDate": "2030-12-08",
+      "leadByEmpId": "102",
+      "completedDate": "",
+      "contactPerson": "Deepak",
+      "contactPersonContactNO": "7338533930",
+      "totalEmpWorking": "12",
+      "projectCost": "12000000000000",
+      "projectDetails": "for ai ",
+      "contactPersonEmailId": "deep21cs",
+      "clientId": "5002"
     }
   ]
 }

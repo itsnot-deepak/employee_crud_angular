@@ -21,3 +21,23 @@ export interface APIResponseModel{ // this is an interface for all the responses
     result:boolean;
     data:any
 }
+export interface employee{
+    empName: string,
+      empId: string,
+      empCode: string,
+      empEmailId:string ,
+      empDesignation: string,
+      role: string
+}
+export interface Project {
+    empName: string;
+    empId: string;
+    empCode: string;
+    empEmailId: string;
+    empDesignation: string;
+    projectName: string;
+    startDate: string; 
+    expectedEndDate: string; 
+    clientName: string;
+    clientProjectId: number;
+}
