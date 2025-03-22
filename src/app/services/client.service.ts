@@ -24,6 +24,6 @@ export class ClientService {
     return this.http.delete<Client[]>(environment.API_URL+"clients/"+id)
   }
   update(obj:Client):Observable<Client[]>{
-    return this.http.put<Client[]>(environment.API_URL+"clients/"+obj.id,obj) // this is post request , the api is same as for get , but here in the method we expect an
+    return this.http.put<Client[]>(environment.API_URL+"clients/"+obj.id,obj) // this is put/edit request so therefore we need to give the proper url and then also give the obj we are upating
   } 
 }

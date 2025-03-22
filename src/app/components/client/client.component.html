@@ -39,61 +39,91 @@
         <div class="card">
             <div class="card-header bg-success">Client List</div>
             <div class="card-body">
+                <form #form="ngForm">
                 <div class="row">
 
                     <div class="col-6">
                         <label for="">ID</label>
-                        <input type="text" [(ngModel)]="clientObject.id" class="form-control">
+                        <input type="text" #personId="ngModel" required minlength="1" name="id" [(ngModel)]="clientObject.id" class="form-control">
+
+                        @if(personId.touched){
+                        
+                            <div class="text-danger">
+                                @if(personId?.errors?.['required']){
+                                    <span>This is required</span>
+                                }
+                                @if(personId?.errors?.['minlength']){
+                                    <span>Min 1 Charter required </span>
+                                }
+                            </div>
+                        }
                     </div>
                     <div class="col-6">
                         <label for="">Person Name</label> <!--for u to use the ngmodel in the input u need to import the formmodule in the imports of the client component -->
-                        <input type="text" [(ngModel)]="clientObject.contactPersonName" class="form-control">
+                        <input type="text" #personName="ngModel" minlength="3"  name="contactPersonName" required [(ngModel)]="clientObject.contactPersonName" class="form-control">
+                        @if(personName.touched){
+                        
+                        <div class="text-danger">
+                            @if(personName?.errors?.['required']){
+                                <span>This is required</span>
+                            }
+                            @if(personName?.errors?.['minlength']){
+                                <span>Min 3 Charter required </span>
+                            }
+                        </div>
+                    }
                     </div>
                     <div class="col-6">
                         <label for="">Contact Number</label>
-                        <input type="text" [(ngModel)]="clientObject.contactNo" class="form-control">
+                        <input type="text" [(ngModel)]="clientObject.contactNo" class="form-control" name="contactNo">
                     </div>
                     <div class="col-6">
                         <label for="">Company Name</label>
-                        <input type="text" [(ngModel)]="clientObject.companyName" class="form-control">
+                        <input type="text" [(ngModel)]="clientObject.companyName" class="form-control" name="companyName">
                     </div>
                     <div class="col-6">
                         <label for="">City </label>
-                        <input type="text" [(ngModel)]="clientObject.city" class="form-control">
+                        <input type="text" [(ngModel)]="clientObject.city" class="form-control" name="city">
                     </div>
                     <div class="col-6">
                         <label for="">State</label>
-                        <input type="text" [(ngModel)]="clientObject.state" class="form-control">
+                        <input type="text" [(ngModel)]="clientObject.state" class="form-control" name="state">
                     </div>
                     <div class="col-6">
                         <label for="">Pincode</label>
-                        <input type="text" [(ngModel)]="clientObject.pincode" class="form-control">
+                        <input type="text" [(ngModel)]="clientObject.pincode" class="form-control" name="pincode">
                     </div>
                     <div class="col-6">
                         <label for="">Address</label>
-                        <textarea [(ngModel)]="clientObject.address" class="form-control"></textarea>
+                        <textarea [(ngModel)]="clientObject.address" class="form-control" name="address"></textarea>
                     </div>
                     <div class="col-6">
                         <label for="">Employee Strength</label>
-                        <input type="text" [(ngModel)]="clientObject.employeeStrength" class="form-control">
+                        <input type="text" [(ngModel)]="clientObject.employeeStrength" required class="form-control" name="employeeStrength"  #emp="ngModel">
+                        @if(emp.touched){
+                            @if(clientObject.employeeStrength==0){
+                                <span class="text-danger">The Employee Strength cannot be zero </span>
+                            }
+                        }
                     </div>
                     <div class="col-6">
                         <label for="">GST No</label>
-                        <input type="text" [(ngModel)]="clientObject.gstNo" class="form-control">
+                        <input type="text" [(ngModel)]="clientObject.gstNo" class="form-control" name="gstNo">
                     </div>
                     <div class="col-6 pt-2">
                         <label for="">Reg No</label>
-                        <input type="text" [(ngModel)]="clientObject.regNo" class="form-control">
+                        <input type="text" [(ngModel)]="clientObject.regNo" class="form-control" name="regNo">
                     </div>
                     <div class="row pt-2" >
                         <div class="col-6 text-center">
-                            <button class="btn btn-success" (click)="AddClient()">{{clientObject.employeeStrength==0?'save':'edit'}}</button>
+                            <button class="btn btn-success" (click)="AddClient()" [disabled]="!form.valid">{{clientObject.employeeStrength==0?'save':'edit'}}</button><!--this is kind of like an if statement to select between the -->
                         </div>
                         <div class="col-6 text-center">
                             <button class="btn btn-secondary" (click)="Rest()">Reset</button>
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
