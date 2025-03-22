@@ -1,75 +1,100 @@
 {
-    "clients": [
-      {
-        "clientId": 101,
-        "contactPersonName": "John Doe",
-        "companyName": "Tech Solutions Inc.",
-        "address": "123 Tech Park, Suite 45",
-        "city": "San Francisco",
-        "pincode": "94105",
-        "state": "California",
-        "employeeStrength": 250,
-        "gstNo": "GSTIN1234567890",
-        "contactNo": "+1 415-555-1234",
-        "regNo": "REG-101-SF"
-      },
-      {
-        "clientId": 102,
-        "contactPersonName": "Alice Smith",
-        "companyName": "Creative Designs Ltd.",
-        "address": "456 Design Avenue, Block C",
-        "city": "New York",
-        "pincode": "10001",
-        "state": "New York",
-        "employeeStrength": 50,
-        "gstNo": "GSTIN9876543210",
-        "contactNo": "+1 212-555-5678",
-        "regNo": "REG-102-NY"
-      }
-    ],
-    "roles": [
-      {
-        "roleId": 2,
-        "role": "Admin"
-      },
-      {
-        "roleId": 4,
-        "role": "Junior Developer"
-      },
-      {
-        "roleId": 6,
-        "role": "Team Lead"
-      },
-      {
-        "roleId": 13,
-        "role": "Manager"
-      },
-      {
-        "roleId": 26,
-        "role": "Client"
-      }
-    ],
-    "designations": [
-      {
-        "designationId": 26,
-        "designation": "Associate Developer"
-      },
-      {
-        "designationId": 28,
-        "designation": "Director"
-      },
-      {
-        "designationId": 29,
-        "designation": "Manager"
-      },
-      {
-        "designationId": 30,
-        "designation": "Janitor"
-      },
-      {
-        "designationId": 32,
-        "designation": "Senior Developer"
-      }
-    ]
-  }
-  
+  "clients": [
+    {
+      "id": "4140",
+      "clientId": 102,
+      "contactPersonName": "will Smith",
+      "companyName": "Creative Designs Ltd.",
+      "address": "456 Design Avenue, Block C",
+      "city": "New York",
+      "pincode": "10001",
+      "state": "New York",
+      "employeeStrength": 50,
+      "gstNo": "GSTIN9876543210",
+      "contactNo": 2125555678,
+      "regNo": "REG-102-NY"
+    },
+    {
+      "id": "c0c4",
+      "clientId": 0,
+      "contactPersonName": "shawn Mendes",
+      "companyName": "desf",
+      "address": "fsdasf",
+      "city": "delhi ",
+      "pincode": "1101",
+      "state": "delhi",
+      "employeeStrength": "10",
+      "gstNo": "efaw",
+      "contactNo": "2121",
+      "regNo": "fewa"
+    },
+    {
+      "id": "12ef",
+      "clientId": 0,
+      "contactPersonName": "Nalini",
+      "companyName": "CMRIT",
+      "address": "safedfa",
+      "city": "Bengaluru",
+      "pincode": "560037",
+      "state": "Karnatak",
+      "employeeStrength": "01",
+      "gstNo": "dsaf",
+      "contactNo": "151856464",
+      "regNo": "asdfg"
+    }
+  ],
+  "roles": [
+    {
+      "roleId": 2,
+      "role": "Admin",
+      "id": "9890"
+    },
+    {
+      "roleId": 4,
+      "role": "Junior Developer",
+      "id": "ae17"
+    },
+    {
+      "roleId": 6,
+      "role": "Team Lead",
+      "id": "bbd5"
+    },
+    {
+      "roleId": 13,
+      "role": "Manager",
+      "id": "b761"
+    },
+    {
+      "roleId": 26,
+      "role": "Client",
+      "id": "3ebc"
+    }
+  ],
+  "designations": [
+    {
+      "designationId": 26,
+      "designation": "Associate Developer",
+      "id": "a946"
+    },
+    {
+      "designationId": 28,
+      "designation": "Director",
+      "id": "c6cb"
+    },
+    {
+      "designationId": 29,
+      "designation": "Manager",
+      "id": "d18c"
+    },
+    {
+      "designationId": 30,
+      "designation": "Janitor",
+      "id": "adad"
+    },
+    {
+      "designationId": 32,
+      "designation": "Senior Developer",
+      "id": "87b3"
+    }
+  ]
+}

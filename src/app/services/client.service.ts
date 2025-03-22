@@ -14,7 +14,16 @@ export class ClientService {
 
   constructor(private http:HttpClient) { } // initialization of the http client is important for the class to run api 
 
-  getAllClient():Observable<Client>{
-    return this.http.get<Client>(environment.API_URL+"the other half of the api ")
+  getAllClient():Observable<Client[]>{
+    return this.http.get<Client[]>(environment.API_URL+"clients")
   }
+  add(obj:Client):Observable<Client[]>{
+    return this.http.post<Client[]>(environment.API_URL+"clients",obj) // this is post request , the api is same as for get , but here in the method we expect an
+  }                                                                   // client objct and , post requires the url and the value to be posted as arguments 
+  deleteClientByID(id:string):Observable<Client[]>{
+    return this.http.delete<Client[]>(environment.API_URL+"clients/"+id)
+  }
+  update(obj:Client):Observable<Client[]>{
+    return this.http.put<Client[]>(environment.API_URL+"clients/"+obj.id,obj) // this is post request , the api is same as for get , but here in the method we expect an
+  } 
 }

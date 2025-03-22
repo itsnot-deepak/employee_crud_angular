@@ -1,4 +1,5 @@
 export class Client{
+  id:string;
     clientId: number
   contactPersonName: string
   companyName: string
@@ -12,6 +13,7 @@ export class Client{
   regNo: string
 
   constructor(){
+    this.id="";
     this.clientId=0
     this.contactPersonName=''
     this.companyName=''

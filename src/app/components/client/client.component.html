@@ -13,16 +13,23 @@
                         <th>Company Name</th>
                         <th>Contact</th>
                         <th>City</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
+                        @for (item of clientList; track $index) {
                         <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{$index+1}}</td>
+                        <td>{{item.companyName}}</td>
+                        <td>{{item.contactPersonName}}</td>
+                        <td>{{item.contactNo}}</td>
+                        <td>{{item.city}}</td>
+                        <td>
+                            <button class="btn btn-primary me-1" (click)="onEdit(item)">Edit</button>
+                            <button class="btn btn-danger"(click)="onDelete(item.id)">Delete</button>
+                        </td>
                     </tr>
+                }
                 </tbody>
                 </table>
             </div>
@@ -33,7 +40,11 @@
             <div class="card-header bg-success">Client List</div>
             <div class="card-body">
                 <div class="row">
-                   
+
+                    <div class="col-6">
+                        <label for="">ID</label>
+                        <input type="text" [(ngModel)]="clientObject.id" class="form-control">
+                    </div>
                     <div class="col-6">
                         <label for="">Person Name</label> <!--for u to use the ngmodel in the input u need to import the formmodule in the imports of the client component -->
                         <input type="text" [(ngModel)]="clientObject.contactPersonName" class="form-control">
@@ -70,16 +81,16 @@
                         <label for="">GST No</label>
                         <input type="text" [(ngModel)]="clientObject.gstNo" class="form-control">
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 pt-2">
                         <label for="">Reg No</label>
                         <input type="text" [(ngModel)]="clientObject.regNo" class="form-control">
                     </div>
                     <div class="row pt-2" >
                         <div class="col-6 text-center">
-                            <button class="btn btn-success" >Save Client</button>
+                            <button class="btn btn-success" (click)="AddClient()">{{clientObject.employeeStrength==0?'save':'edit'}}</button>
                         </div>
                         <div class="col-6 text-center">
-                            <button class="btn btn-secondary">Reset</button>
+                            <button class="btn btn-secondary" (click)="Rest()">Reset</button>
                         </div>
                     </div>
                 </div>

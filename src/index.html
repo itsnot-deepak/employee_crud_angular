@@ -28,7 +28,7 @@ json-server --wacth db.json --port 3000 this will start the server and give u th
 
 Method	URL	                                Description
 GET	    http://localhost:3000/clients	      Fetch all clients
-GET	    http://localhost:3000/clients/{id}	Fetch a specific client by clientId
+GET	    http://localhost:3000/clients?clientId=101	Fetch a specific client by clientId
 POST	  http://localhost:3000/clients	      Add a new client
 PUT	    http://localhost:3000/clients/{id}	Update an existing client
 DELETE	http://localhost:3000/clients/{id}	Delete a client
@@ -63,6 +63,16 @@ also in the environment now we can add the local api and then route thru that
 
 
 -->
+
+<!-- SO there is one more change in the project that is ki now we are using the id itself to update and delete things 
+the reason behind that is that the json db doesn't let us delete or update any record directly and to delete usin any of the 
+given fields in the form we need to first fecth the record using the field then  find the id then sent the delete request 
+then the deletion happens which is quite a long process for this , there for what we will be doing is that we would set the id 
+during the form only  
+now everythin is happening using the id 
+
+-->
+
 
 
 
