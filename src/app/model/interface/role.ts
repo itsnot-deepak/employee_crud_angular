@@ -29,6 +29,8 @@ export interface employee{
       empDesignation: string,
       role: string
 }
+
+// this is my project interface that is used to store the data and get the data 
 export interface Project {
     empName: string;
     empId: string;

@@ -1,14 +1,15 @@
-import { CommonModule} from '@angular/common';
-import { Component, inject, NgModule, OnInit } from '@angular/core';
+import { CommonModule, DatePipe} from '@angular/common';
+import { Component, inject, NgModule, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, NgForm, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../services/client.service';
-import { employee } from '../../model/interface/role';
+import { employee, Project } from '../../model/interface/role';
 import { Client } from '../../model/class/client';
+import { AlertComponent } from "../../reusableComponent/alert/alert.component";
 
 @Component({
   selector: 'app-client-project',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, DatePipe, AlertComponent],
   templateUrl: './client-project.component.html',
   styleUrl: './client-project.component.css'
 })
@@ -18,6 +19,7 @@ export class ClientProjectComponent implements OnInit {
   ngOnInit(): void {
     this.getAllEmployee();
     this.getAllclient();
+    this.getAllProject();
   }
   employeelist:employee[]=[];
   clientList:Client[]=[];
@@ -60,4 +62,18 @@ export class ClientProjectComponent implements OnInit {
     contactPersonEmailId: new FormControl(""),
     clientId: new FormControl("")
   })
+
+  firstName=signal("Angular 18"); // declaring a signal and then intializing that with an value 
+  projectList=signal<Project[]>([]); // this makes an signal of type project array and then it is initalized as an list 
+  // we can strongly type this and have a strong type for the signal 
+
+  changeName(){
+    this.firstName.set("React js") // this can be used to change the signal value 
+  }
+
+  getAllProject(){
+    this.clientSrv.getClientProject().subscribe((res)=>{
+      this.projectList.set(res);
+    })
+  }
 }

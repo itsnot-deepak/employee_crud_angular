@@ -41,6 +41,20 @@
       "gstNo": "GSTIN8765432109",
       "contactNo": 4255557890,
       "regNo": "REG-5003-USA"
+    },
+    {
+      "id": "12345",
+      "clientId": 0,
+      "contactPersonName": "sadf",
+      "companyName": "dfa",
+      "address": "dafda",
+      "city": "afd",
+      "pincode": "afd",
+      "state": "adf",
+      "employeeStrength": "10",
+      "gstNo": "dasfda",
+      "contactNo": "sfad",
+      "regNo": "dafd"
     }
   ],
   "roles": [

@@ -174,10 +174,60 @@ reactive forms , so unlike the client where we made a form and added all the val
 component called projects for clients in that we created a new formgroup object and then we binded this form group with the form i the html
 under the form tag by using the [formgroup] data binding and then we added all the validations in the form as u see 
 
+Pipes 
+
+pipes are just used to format the html data , there are default pipes and cutom pipe that we can make 
+from ang 17 u need to import the pipe
+
+
+so before using the pipes in the html we need to import them in the component first and then after importing them
+we can use the in the html under the {{}} by using the | symbol
+
+some pipes are -uppercase - makes thing uppercase 
+                datepipe- make the date in th certain format that u want ,simply date will give us the date but 
+                we can also do date:'dd-MMM-yyyy' or some other format
+                jsonpipe- the data of the object cannot be showed directly so instead of that we use the json pipe to show the data 
 
 
 
+ASYNC PIPE
 
+async pipe are mostly used where we do not want to subscribe the api in the component itself rather we subscribe the 
+api in the html file using the async pipe and then we get the data , to understand the syntax and more read  from chatgpt 
+
+
+Constant file 
+the habit or norm is to add all the static parts in the const file like the api parts 
+see the constants folder 
+or it can also have values that u are going to use multiple times in your device like the messages 
+or let us say that i am going to use some cloud endpint key etc
+
+
+Signal - u can compare the signal with the observable 
+it is just like a variable 
+and u can intial that signal 
+whenever we want to use the signal we need to use it with () in the databinding , like invoking like a method 
+
+
+to change the value of the signal we would have an button and on click of that button we can call a function that 
+can be used to change the value of the signal to set a new value we use the set method in the signal 
+
+what is the purpose of the signal 
+the change detection is now done by signal and they do not use the zone.js 
+
+
+Reusable Components
+sometimes we  need to have some fetures that are common for all the components now instead of having to make them 
+again and again we use the reusable comonponent 
+
+here we are using an alert box to show that we are using th reusable component but currently it is just static 
+and we can make any changes to it using the input 
+
+the input needs to be imported in the component file and also this input can be provided by the parent componet 
+
+the input variable is created using the @Input() and then the input variables are binded with parent component 
+
+we can also make a dynamic color 
 
 
 

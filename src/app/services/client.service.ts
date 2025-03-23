@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Client } from '../model/class/client';
 import { APIResponseModel, employee, Project } from '../model/interface/role';
 import { environment } from '../../environments/environment.development';
+import { Constant } from '../components/constant/Constant';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ClientService {
   constructor(private http:HttpClient) { } // initialization of the http client is important for the class to run api 
 
   getAllClient():Observable<Client[]>{
-    return this.http.get<Client[]>(environment.API_URL+"clients")
+    return this.http.get<Client[]>(environment.API_URL+Constant.API_METHOD.GET_ALL_CLIENT) // this api key is using the constant file 
   }
   add(obj:Client):Observable<Client[]>{
     return this.http.post<Client[]>(environment.API_URL+"clients",obj) // this is post request , the api is same as for get , but here in the method we expect an
@@ -32,5 +33,8 @@ export class ClientService {
 
   addClientProject(obj:Project):Observable<Project[]>{
     return this.http.post<Project[]>(environment.API_URL+"projects",obj)
-  }   
+  } 
+  getClientProject():Observable<Project[]>{
+    return this.http.get<Project[]>(environment.API_URL+Constant.API_METHOD.GET_ALL_CLIENT_PROJECT)
+  }    
 }

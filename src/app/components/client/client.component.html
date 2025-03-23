@@ -1,7 +1,9 @@
+
+<app-alert [Alert]="'success '" [message]="'hi from the client '"></app-alert>
 <div class="row">
     <div class="col-8">
         <div class="card">
-            <div class="card-header bg-success">Client List</div>
+            <div class="card-header bg-success">Client List -{{currentDate |date:'dd-MMM-yy'}}</div>
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead>
@@ -20,7 +22,7 @@
                         @for (item of clientList; track $index) {
                         <tr>
                         <td>{{$index+1}}</td>
-                        <td>{{item.companyName}}</td>
+                        <td>{{item.companyName | uppercase}}</td>
                         <td>{{item.contactPersonName}}</td>
                         <td>{{item.contactNo}}</td>
                         <td>{{item.city}}</td>
@@ -116,7 +118,8 @@
                     </div>
                     <div class="row pt-2" >
                         <div class="col-6 text-center">
-                            <button class="btn btn-success" (click)="AddClient()" [disabled]="!form.valid">{{clientObject.employeeStrength==0?'save':'edit'}}</button><!--this is kind of like an if statement to select between the -->
+                            <!-- <app-mybutton [btnClass]="'btn btn-success'"  [btnText]="clientObject.employeeStrength==0?'save':'edit'"></app-mybutton> -->
+                            <button class="btn btn-success" [disabled]="form.invalid" (click)="AddClient()">{{clientObject.employeeStrength==0?'save':'edit'}}</button><!--this is kind of like an if statement to select between the -->
                         </div>
                         <div class="col-6 text-center">
                             <button class="btn btn-secondary" (click)="Rest()">Reset</button>

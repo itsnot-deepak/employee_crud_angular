@@ -1,17 +1,21 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Client } from '../../model/class/client';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ClientService } from '../../services/client.service';
+import { AlertComponent } from "../../reusableComponent/alert/alert.component";
+import { MybuttonComponent } from "../../reusableComponent/mybutton/mybutton.component";
 
 @Component({
   selector: 'app-client',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule, UpperCasePipe, DatePipe, AlertComponent, MybuttonComponent],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css'
 })
 export class ClientComponent implements OnInit{
+
+  currentDate:Date=new Date();
   clientObject:Client=new Client(); // this is the instance of the class , this is why class is used instead of the interface
   clientObject2:Client=new Client(); 
   clientList:Client[]=[]; // this will get the data that is returned from the api 
